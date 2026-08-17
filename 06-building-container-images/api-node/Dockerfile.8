@@ -17,7 +17,7 @@ COPY package*.json ./
 RUN --mount=type=cache,target=/usr/src/app/.npm \
   npm set cache /usr/src/app/.npm && \
   npm ci --only=production && \
-  npm audit fix
+  npm audit fix --force
 
 #After npm commands, optionally clean:
 RUN rm -rf /var/cache/apk/*
