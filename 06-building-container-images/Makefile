@@ -15,7 +15,7 @@ build-multiarch:
 		--platform linux/amd64,linux/arm64,linux/arm/v7 \
 		--secret id=secret.txt,src=local-secret.txt \
 		-t sidpalas/multi-arch-test:latest \
-		-f Dockerfile.sample \
+		-f Dockerfile \
 		--push \
 		.
 

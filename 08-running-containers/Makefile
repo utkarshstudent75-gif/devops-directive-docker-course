@@ -90,7 +90,7 @@ docker-stop:
 	-docker stop api-node
 	-docker stop api-golang
 	-docker stop client-react-vite
-	-docker stop client-react-nginx
+	-docker stop client-react-ngnix
 
 .PHONY: docker-rm
 docker-rm:

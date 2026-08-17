@@ -6,15 +6,16 @@ services:
       context: ../05-example-web-application/client-react/
       dockerfile: ../../06-building-container-images/client-react/Dockerfile.3
     init: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      - WATCHPACK_POLLING=true
     volumes:
       - type: bind
         source: ../05-example-web-application/client-react/
         target: /usr/src/app/
       - type: volume
         target: /usr/src/app/node_modules 
-      - type: bind
-        source: ../08-running-containers/client-react/vite.config.js
-        target: /usr/src/app/vite.config.js
     networks:
       - frontend
     ports:
